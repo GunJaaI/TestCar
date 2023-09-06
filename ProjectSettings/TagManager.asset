@@ -3,16 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - StartTarget
+  - StartTargetTag
+  - TargetTag
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - StartTarget
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - TargetTag
   - 
   - 
   - 
