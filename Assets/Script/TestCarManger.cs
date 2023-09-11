@@ -21,6 +21,9 @@ public class TestCarManger : MonoBehaviour
 
     [SerializeField] float minTras;
     [SerializeField] float maxTras;
+   
+    [SerializeField] float minUTras; 
+    [SerializeField] float maxUTras;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,7 +69,8 @@ public class TestCarManger : MonoBehaviour
         while (true)
         {
             var wanted = Random.Range(minTras, maxTras);
-            var position = new Vector3(wanted, 1);
+            var wanted2 = Random.Range(minUTras, maxUTras);
+            var position = new Vector3(wanted, 1,wanted2);
             GameObject gameObject = Instantiate(Target, position, Quaternion.identity);
             yield return new WaitForSeconds(SecondSpawner);
         }
