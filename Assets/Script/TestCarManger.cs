@@ -14,7 +14,10 @@ public class TestCarManger : MonoBehaviour
     public string TargetTag = "TargetTag";
     [SerializeField] TextMeshProUGUI TimeText;
     public float elapsedTime;
+    [SerializeField] TextMeshProUGUI Pt;
+    public float Point;
     [SerializeField] float SecondSpawner = 1f;
+
 
     [SerializeField] float minTras;
     [SerializeField] float maxTras;
@@ -32,19 +35,25 @@ public class TestCarManger : MonoBehaviour
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int second = Mathf.FloorToInt(elapsedTime % 60);
         TimeText.text = string.Format("{0:00}:{1:00}",minutes,second);
+        Pt.text = string.Format("0",Point);
        
 
     }
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("StartTargetTag"))
+        {     
+            StartObj.SetActive(false);
+            StartCoroutine(TargetSpawner());
+        }
+        if (collision.collider.CompareTag("TargetTag"))
         {
 
-                 
-            StartObj.SetActive(false);
+
+            Point++;
             //StartCoroutine(TargetSpawner());
         }
-       
+
     }
     private void StartTimer()
     {
