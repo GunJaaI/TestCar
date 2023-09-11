@@ -51,6 +51,7 @@ public class TestCarManger : MonoBehaviour
 
 
             Point++;
+            Pt.text = Point.ToString();
             //StartCoroutine(TargetSpawner());
         }
 

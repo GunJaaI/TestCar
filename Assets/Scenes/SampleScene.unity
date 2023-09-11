@@ -1357,7 +1357,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 169.42348, w: 0}
+  m_margin: {x: -98.00673, y: 0, z: 169.42348, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1378,6 +1378,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 680481027, guid: 1cf84c84eb2be9c419bcb8ca9ab9f05e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 680481027, guid: 1cf84c84eb2be9c419bcb8ca9ab9f05e, type: 3}
       propertyPath: BreakForce
       value: 9000
@@ -1520,7 +1524,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861831275}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 905f4750d95de0f4994427ec7ac4aac6, type: 3}
   m_Name: 
@@ -1539,6 +1543,23 @@ MonoBehaviour:
   SecondSpawner: 1
   minTras: 40
   maxTras: 70
+--- !u!114 &1950749828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861831275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5d3b1898000734e94ae0ff6b098aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 100
+  MaxSpeed: 240
+  Drag: 0.98
+  SteerAngle: 20
+  Traction: 0.8
 --- !u!1 &1962922861
 GameObject:
   m_ObjectHideFlags: 0
