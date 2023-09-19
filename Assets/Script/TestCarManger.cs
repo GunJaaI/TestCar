@@ -17,7 +17,7 @@ public class TestCarManger : MonoBehaviour
     [SerializeField] TextMeshProUGUI Pt;
     public float Point;
     [SerializeField] float SecondSpawner = 1f;
-
+    
 
     [SerializeField] float minTras;
     [SerializeField] float maxTras;
@@ -47,6 +47,7 @@ public class TestCarManger : MonoBehaviour
         if (collision.collider.CompareTag("StartTargetTag"))
         {     
             StartObj.SetActive(false);
+
             StartCoroutine(TargetSpawner());
         }
         if (collision.collider.CompareTag("TargetTag"))

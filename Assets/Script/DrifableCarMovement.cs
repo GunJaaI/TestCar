@@ -12,7 +12,10 @@ public class DrifableCarMovement : MonoBehaviour
     public float Traction = 1;
 
     // Variables
-    private Vector3 MoveForce;
+     private Vector3 MoveForce;
+     private Vector3 UnMoveForce;
+     public Rigidbody rb;
+
 
     // Update is called once per frame
     void Update()
@@ -34,5 +37,16 @@ public class DrifableCarMovement : MonoBehaviour
         Debug.DrawRay(transform.position, MoveForce.normalized * 3);
         Debug.DrawRay(transform.position, transform.forward * 3, Color.blue);
         MoveForce = Vector3.Lerp(MoveForce.normalized, transform.forward, Traction * Time.deltaTime) * MoveForce.magnitude;
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("OtherCollision"))
+        {
+            CarStop();
+        }
+    }
+    void CarStop()
+    {
+        
     }
 }
