@@ -1,39 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Timemanager;
 
-public class ARCADEMODEDITOR : MonoBehaviour
+namespace Timemanager
 {
-    public static bool IsGameStart = false;
-    public GameObject StartMenu;
-    // Start is called before the first frame update
-    void Start()
+    public class ARCADEMODEDITOR : MonoBehaviour
     {
-        Pause();
-    }
+        public static bool IsGameStart = false;
+        public GameObject StartMenu;
+        // Start is called before the first frame update
+        void Start()
+        {
+            Pause();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(IsGameStart == false)
+        // Update is called once per frame
+        void Update()
         {
-            Time.timeScale = 0;
+            if (IsGameStart == false)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                StartMenu.SetActive(false);
+                Time.timeScale = 1;
+            }
         }
-        else
+        public void Pause()
         {
-            StartMenu.SetActive(false);
-            Time.timeScale = 1;
+
+            IsGameStart = false;
         }
-    }
-     public void Pause()
-    {
-       
-        IsGameStart = false;
-    }
-   public void Resume()
-    {
-        IsGameStart = true;
-       
-       
+        public void Resume()
+        {
+            IsGameStart = true;
+
+
+        }
     }
 }

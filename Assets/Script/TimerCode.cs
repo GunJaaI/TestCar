@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+ namespace Timemanager { 
 public class TimerCode : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI TimeText;
@@ -29,10 +30,12 @@ public class TimerCode : MonoBehaviour
             Pause();
            
         }
-        void Pause()
+      
+    }  
+    void Pause()
         {
             Time.timeScale = 0;
 
         }
-    }
+}
 }

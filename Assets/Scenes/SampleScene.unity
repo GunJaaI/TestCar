@@ -1974,6 +1974,10 @@ PrefabInstance:
       value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 6442450449881577594, guid: 1cf84c84eb2be9c419bcb8ca9ab9f05e, type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442450449881577594, guid: 1cf84c84eb2be9c419bcb8ca9ab9f05e, type: 3}
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
@@ -2073,7 +2077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeText: {fileID: 1117885337}
-  remainingTime: 20
+  remainingTime: 90
 --- !u!1 &1962922861
 GameObject:
   m_ObjectHideFlags: 0
