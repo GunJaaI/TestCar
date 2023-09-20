@@ -1552,11 +1552,10 @@ MonoBehaviour:
   Target: {fileID: 2016134901}
   StartTargetTag: StartTargetTag
   TargetTag: TargetTag
-  TimeText: {fileID: 1117885337}
   elapsedTime: 0
   Pt: {fileID: 1869197724}
   Point: 0
-  SecondSpawner: 1
+  SecondSpawner: 2
   minTras: 10
   maxTras: 80
   minUTras: 10
@@ -1573,11 +1572,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f5d3b1898000734e94ae0ff6b098aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 50
+  MoveSpeed: 150
   MaxSpeed: 240
   Drag: 0.98
   SteerAngle: 20
   Traction: 2
+--- !u!114 &1950749832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861831275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b55652d8b6718fe46ac014ed8b390e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeText: {fileID: 1117885337}
+  remainingTime: 20
 --- !u!1 &1962922861
 GameObject:
   m_ObjectHideFlags: 0

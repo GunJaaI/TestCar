@@ -12,7 +12,7 @@ public class TestCarManger : MonoBehaviour
     public GameObject Target;
     public string StartTargetTag = "StartTargetTag";
     public string TargetTag = "TargetTag";
-    [SerializeField] TextMeshProUGUI TimeText;
+    
     public float elapsedTime;
     [SerializeField] TextMeshProUGUI Pt;
     public float Point;
@@ -27,17 +27,12 @@ public class TestCarManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        elapsedTime += Time.deltaTime;
-        TimeText.text = elapsedTime.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        elapsedTime += Time.deltaTime;
-        int minutes = Mathf.FloorToInt(elapsedTime / 60);
-        int second = Mathf.FloorToInt(elapsedTime % 60);
-        TimeText.text = string.Format("{0:00}:{1:00}",minutes,second);
+        
         Pt.text = string.Format("0",Point);
        
 
