@@ -1,23 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Level1BetaManager : MonoBehaviour
 {
-    public GameObject StartTarget;
+    public GameObject StartTarget,UIElement;
     private bool IsStart = false;
+
+    [SerializeField] TextMeshProUGUI RemainingDrop;
+    private float Dropped = 10;
 
     // Start is called before the first frame update
     void Start()
     {
         
+         
     }
 
     // Update is called once per frame
     void Update()
     {
+        RemainingDrop.text = string.Format("{0}",Dropped);
         if(IsStart == true)
         {
+            UIElement.SetActive(true);
+           
+        }
+        else
+        {
+            UIElement.SetActive(false);
 
         }
     }
@@ -27,6 +39,11 @@ public class Level1BetaManager : MonoBehaviour
         {
             StartTarget.SetActive(false);
             IsStart = true;
+        }
+        if (collision.collider.CompareTag("TargetTag"))
+        {
+            Dropped--;
+            RemainingDrop.text = Dropped.ToString();
         }
     }
 }
