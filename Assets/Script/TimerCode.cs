@@ -8,9 +8,11 @@ public class TimerCode : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI TimeText;
     [SerializeField] public float remainingTime;
-    // Start is called before the first frame update
+        // Start is called before the first frame update
+        [SerializeField] public GameObject GameOverUI;
     void Start()
     {
+            GameOverUI.SetActive(false);
        // elapsedTime += Time.deltaTime;
       //  TimeText.text = elapsedTime.ToString();
 
@@ -27,6 +29,7 @@ public class TimerCode : MonoBehaviour
         if (remainingTime <= 0)
         {
             TimeText.text = string.Format("{0:00}:{1:00}", 0, 0);
+                GameOverUI.SetActive(true);
             Pause();
            
         }

@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Level1BetaManager : MonoBehaviour
 {
+  
     public GameObject StartTarget,UIElement;
     private bool IsStart = false;
+    [SerializeField] public GameObject SucessUI;
 
     [SerializeField] TextMeshProUGUI RemainingDrop;
     private float Dropped = 10;
@@ -14,7 +17,7 @@ public class Level1BetaManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SucessUI.SetActive(false);
          
     }
 
@@ -32,6 +35,11 @@ public class Level1BetaManager : MonoBehaviour
             UIElement.SetActive(false);
 
         }
+        if (Dropped < 1) 
+        {
+            SucessUI.SetActive(true);
+            Pause();
+        }
     }
     public void OnCollisionEnter(Collision collision)
     {
@@ -45,5 +53,14 @@ public class Level1BetaManager : MonoBehaviour
             Dropped--;
             RemainingDrop.text = Dropped.ToString();
         }
+    }
+    public void Rastart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    void Pause()
+    {
+        Time.timeScale = 0;
+
     }
 }
