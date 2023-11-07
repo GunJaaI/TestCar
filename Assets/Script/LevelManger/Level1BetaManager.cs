@@ -35,7 +35,7 @@ public class Level1BetaManager : MonoBehaviour
             UIElement.SetActive(false);
 
         }
-        if (Dropped < 1) 
+        if (Dropped < 2) 
         {
             SucessUI.SetActive(true);
             Pause();
